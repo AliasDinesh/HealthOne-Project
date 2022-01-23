@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/home">
             Sportcenter
@@ -11,21 +11,18 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/home">home</a>
+                    <a class="nav-link" href="/categories">Sportapparaten</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">sportapparaat</a>
+                    <a class="nav-link"  href="#">Registreren</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="#">registreren</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">inloggen</a>
+                    <a class="nav-link" href="/login">Inloggen</a>
                 </li>
             </ul>
         </div>
