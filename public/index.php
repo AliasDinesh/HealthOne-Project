@@ -2,7 +2,10 @@
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
+require '../Modules/Review.php';
+require '../Modules/Login.php';
 
+session_start();
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -11,29 +14,93 @@ $titleSuffix = "";
 switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
-        
-        if (isset($_GET['category_id'])) {
-            $categoryId = $_GET['category_id'];
+        $categories = getCategories();
+        include_once"../Templates/categories.php";
+        break;
+
+    case 'category':
+        $titleSuffix = ' | Category';
+        if (isset($_GET['id'])) {
+            $categoryId = $_GET['id'];
             $products = getProducts($categoryId);
             $name = getCategoryName($categoryId);
+            include_once "../Templates/products.php";
+        } else {
+            $titleSuffix = ' | Home';
+            include_once"../Templates/home.php";
+        }
+        break;
 
-            if (isset($_GET['product_id'])) {
-                $productId = $_GET['product_id'];
-                $product = getProduct($productId);
-                $titleSuffix = ' | ' . $product->name;
-                if(isset($_POST['name']) && isset($_POST['review'])) {
-                    saveReview($_POST['name'],$_POST['review']);
-                    $reviews=getReviews($productId);
-                }
-                // TODO Zorg dat je hier de product pagina laat zien
+    case 'product':
+        if (isset($_GET['id'])) {
+            $productId = $_GET['id'];
+            $product = getProduct($productId);
+            $name = getCategoryName($product->category_id);
+            $titleSuffix = ' | ' . $product->name;
+            include_once "../Templates/product.php";
+        } else {
+            $titleSuffix = ' | Home';
+            include_once "../Templates/home.php";
+        }
+        break;
+
+    case 'review':
+        if (isset($_GET['id'])) {
+            $productId = $_GET['id'];
+            $product = getProduct($productId);
+            $reviews = getReviews($productId);
+            $name = getCategoryName($product->category_id);
+            $titleSuffix = ' | Review' . $product->name;
+            //close button
+            if (isset($_POST['close'])) {
+                include_once "../Templates/product.php";
+            }
+            //submit form button
+            else if (isset($_POST['name']) && !empty($_POST['name'])
+                && isset($_POST['review']) && !empty($_POST['review'])) {
+                 saveReview($_POST['name'], $_POST['review'], $_POST['stars']);
+                 $reviews = getReviews($productId);
+                 $message = $_POST['name'];
+                 include_once "../Templates/product.php";
             } else {
-                // TODO Zorg dat je hier alle producten laat zien van een categorie
+                include_once "../Templates/review.php";
             }
         } else {
-            // TODO Toon de categorieen
-            $categories = getCategories();
-            include_once "../Templates/categories.php";
+            include_once "../Templates/home.php";
         }
+        break;
+
+    case 'login':
+        $titleSuffix = ' | Login';
+        if (isset($_POST['login'])) {
+            $result = checkLogin();
+            switch ($result) {
+                case 'ADMIN':
+                    header("Location: /admin/home");
+                    //include_once "../Templates/admin/home.php";
+                    break;
+                case 'MEMBER':
+                    break;
+                case 'FAILURE':
+                    $message = "Email of password is niet correct ingevuld!";
+                    include_once "../Templates/login.php";
+                    break;
+                case 'INCOMPLETE':
+                    $message = "Formulier is niet volledig ingevuld";
+                    include_once "../Templates/login.php";
+                    break;
+            }
+        } else {
+            include_once "../Templates/login.php";
+        }
+        break;
+
+    case 'admin':
+        include_once ('admin.php');
+        break;
+
+    case 'contact':
+        include_once "../Templates/contact.php";
         break;
     default:
         $titleSuffix = ' | Home';
