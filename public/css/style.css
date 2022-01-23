@@ -19,10 +19,15 @@ body {
     margin-bottom: 20px
 }
 
-.navbar {
-    margin-bottom: 0;
-}
-
 .product-img {
     width: 70%;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+    width: 100px;
 }
