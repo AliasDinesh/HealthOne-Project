@@ -1,16 +1,16 @@
 <?php
 global $params;
+global $title;
+global $titleSuffix;
 
 if (!isAdmin()) {
+    logOut();
     header("Location:/home");
 } else {
     switch ($params[2]) {
-        case 'home':
-            include_once "../Templates/admin/home.php";
-            break;
-
         case 'products':
             $products = getAllProducts();
+            $titleSuffix = ' | Beheer';
             include_once "../Templates/admin/products.php";
             break;
 
@@ -24,10 +24,12 @@ if (!isAdmin()) {
                 } else {
                     echo $message;
                     $categories = getCategories();
+                    $titleSuffix = ' | Add';
                     include_once '../Templates/admin/addProduct.php';
                 }
             } else {
                 $categories = getCategories();
+                $titleSuffix = ' | Add';
                 include_once '../Templates/admin/addProduct.php';
             }
             break;
@@ -38,6 +40,10 @@ if (!isAdmin()) {
             deleteProduct($_GET['id']);
             $products = getAllProducts();
             include_once '../Templates/admin/products.php';
+            break;
+
+        case 'logout':
+            header("Location: /home");
             break;
 
         default:
