@@ -11,7 +11,7 @@ include_once('defaults/head.php');
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
     include_once('defaults/pictures.php');
-    global $product, $reviews, $message;
+    global $product, $reviews, $message, $name;
     ?>
     <?php if (!empty($message)): ?>
     <div class="alert alert-success" role="alert">
