@@ -11,8 +11,13 @@ include_once('defaults/head.php');
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
     include_once('defaults/pictures.php');
+    global $message;
     ?>
-
+    <?php if (!empty($message)): ?>
+        <div class="alert alert-danger" role="alert">
+             <?=$message?>
+        </div>
+    <?php endif;?>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
