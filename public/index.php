@@ -5,11 +5,11 @@ require '../Modules/Database.php';
 require '../Modules/Review.php';
 require '../Modules/Login.php';
 
-session_start();
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
+session_start();
 
 switch ($params[1]) {
     case 'categories':
@@ -80,6 +80,8 @@ switch ($params[1]) {
                     //include_once "../Templates/admin/home.php";
                     break;
                 case 'MEMBER':
+                    header("Location: /member/home");
+                    //include_once "../Templates/member/home.php";
                     break;
                 case 'FAILURE':
                     $message = "Email of password is niet correct ingevuld!";
@@ -95,8 +97,33 @@ switch ($params[1]) {
         }
         break;
 
+    case 'register':
+        if (isset($_POST['register'])) {
+            if (isset($_POST['first_name']) && !empty($_POST['first_name']) && isset($_POST['last_name']) && !empty($_POST['last_name'])
+                && isset($_POST['email1']) && !empty($_POST['email1']) && isset($_POST['password1']) && !empty($_POST['password1'])) {
+                saveUser($_POST['email1'], $_POST['password1'], $_POST['first_name'], $_POST['last_name']);
+                $member = $_POST['first_name'];
+                include_once "../Templates/home.php";
+            } else {
+                $message = "Formulier is niet volledig ingevuld";
+                include_once "../Templates/register.php";
+            }
+        } else {
+            include_once "../Templates/register.php";
+        }
+        break;
+
     case 'admin':
         include_once ('admin.php');
+        break;
+
+    case 'member':
+        include_once ('member.php');
+        break;
+
+    case 'logout':
+        session_destroy();
+        header("Location: /home");
         break;
 
     case 'contact':
