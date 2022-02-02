@@ -3,7 +3,10 @@ RewriteEngine on
 RewriteRule ^category/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]    # Handle category requests
 RewriteRule ^product/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]    # Handle product requests
 RewriteRule ^review/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]    # Handle review requests
-RewriteRule ^admin/delete/([0-9]+)?$ /public/index.php?id=$1    [NC,L] #Handle delete products request
+RewriteRule ^admin/delete/([0-9]+)?$ /public/index.php?id=$1    [NC,L]   #Handle delete products request
+RewriteRule ^member/category/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]    # Handle category requests
+RewriteRule ^member/product/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]    # Handle product requests
+RewriteRule ^member/review/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]    # Handle review requests
 
 # Rewrite all the default paths to public e.g. /css/style.css -> /public/css/style.css
 RewriteCond %{REQUEST_URI} !/public
