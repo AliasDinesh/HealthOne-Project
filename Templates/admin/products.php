@@ -50,6 +50,7 @@ include_once('defaults/head.php');
     <a type="button" class="btn btn-success btn-sm px-3" href="/admin/add">
         <i class="bi bi-plus-square"></i>
     </a>
+    <hr>
     <?php
     include_once ('defaults/footer.php');
     ?>
