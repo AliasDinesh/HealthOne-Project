@@ -53,15 +53,13 @@ function fileUpload()
         $message = "Sorry alleen gif, png of jpeg files zijn toegestaan";
     }
 
-    $target_dir = '/categories/' . strtolower(getCategoryName((int)$_POST['categories'])) . '/';
+    $target_dir = 'img/categories/' . strtolower(getCategoryName((int)$_POST['categories'])) . '/';
     $target_file = $_FILES['userfile']['name'];
-
-    do {
-        $target_file = $target_dir . basename($target_file);
-    } while (file_exists($target_file));
+    $target_file = $target_dir.md5($target_file) . "." .$ext;
 
     if ($fileError === 0) {
         move_uploaded_file($_FILES['userfile']['tmp_name'], $target_file);
+        var_dump($target_file);
         $message.= "Upload is gelukt, bestandsnaam is " . $target_file;
         return $target_file;
     } else {
