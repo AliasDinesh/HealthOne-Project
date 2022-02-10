@@ -28,7 +28,7 @@ include_once('defaults/head.php');
                 <div class="card">
                     <div class="card-body text-center">
                         <a href="/member/product/<?= $product->id?>">
-                            <img class="product-img img-responsive center-block"  width="200px" height="200px" src='/img/<?= $product->picture?>' alt="product"/>
+                            <img class="product-img img-responsive center-block"  width="200px" height="200px" src='/<?= $product->picture?>' alt="product"/>
                         </a>
                         <div class="card-title mb-3"><?= $product->name ?></div>
                     </div>

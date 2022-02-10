@@ -30,7 +30,7 @@ include_once('defaults/head.php');
             <?php foreach ($products as $product):  ?>
                 <tr>
                     <td><?= $count++?></td>
-                    <td style="width: 20%" "><img src="/img/<?=$product->picture?>" class="img-thumbnail img-fluid"</td>
+                    <td style="width: 20%" "><img src="/<?=$product->picture?>" class="img-thumbnail img-fluid"</td>
                     <td><?=$product->name?></td>
                     <td><?=getCategoryName($product->category_id)?></td>
                     <td class="text-center">
