@@ -1,4 +1,5 @@
 <?php
+// function to get products from a category
 function getProducts(int $categoryId):array
 {
     global $pdo;
@@ -7,7 +8,7 @@ function getProducts(int $categoryId):array
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_CLASS, 'Product');
 }
-
+// function to get one product from products
 function getProduct(int $productId):Product
 {
     global $pdo;
@@ -16,7 +17,7 @@ function getProduct(int $productId):Product
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_CLASS, 'Product')[0];
 }
-
+// function to get all products
 function getAllProducts():array
 {
     global $pdo;
@@ -24,7 +25,7 @@ function getAllProducts():array
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_CLASS, 'Product');
 }
-
+// function to delete a product
 function deleteProduct(int $product_id)
 {
     global $pdo;
@@ -36,7 +37,7 @@ function deleteProduct(int $product_id)
         $stmnt->execute();
     }
 }
-
+// function to upload an image file
 function fileUpload()
 {
     if (isset($_POST['checkfile'])) {
@@ -66,7 +67,7 @@ function fileUpload()
         $message.= "Sorry, upload is niet gelukt ". $target_file;
     }
 }
-
+//function to save a product
 function saveProduct(string $name, string $description, int $category_id ):void
 {
     global $pdo;

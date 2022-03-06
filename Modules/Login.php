@@ -1,5 +1,5 @@
 <?php
-
+// function to check login
 function checkLogin():string
 {
     global $pdo;
@@ -28,13 +28,13 @@ function checkLogin():string
     }
     return 'INCOMPLETE';
 }
-
+// function to log out
 function logOut()
 {
     unset($_SESSION['user']);
     session_destroy();
 }
-
+// function to check if the user who logged in, is an admin
 function isAdmin():bool
 {
     if (isset($_SESSION['user']) && !empty($_SESSION['user']))
@@ -49,7 +49,7 @@ function isAdmin():bool
     }
     return false;
 }
-
+// function to check if the user who logged in, is a member
 function isMember():bool
 {
     if (isset($_SESSION['user']) && !empty($_SESSION['user']))
@@ -65,15 +65,3 @@ function isMember():bool
     return false;
 }
 
-function saveUser(string $email, string $password, string $first_name, string $last_name):void
-{
-    global $pdo;
-    $role = 'member';
-    $sth = $pdo->prepare('INSERT INTO `user` (email, password, first_name, last_name, role) VALUES (?, ?, ?, ?, ?)');
-    $sth->bindParam(1, $email);
-    $sth->bindParam(2, $password);
-    $sth->bindParam(3, $first_name);
-    $sth->bindParam(4, $last_name);
-    $sth->bindParam(5, $role);
-    $sth->execute();
-}

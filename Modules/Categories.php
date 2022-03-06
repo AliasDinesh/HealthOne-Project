@@ -1,12 +1,12 @@
 <?php
-
+// function to get all categories
 function getCategories()
 {
     global $pdo;
     $categories = $pdo->query('SELECT * FROM category')->fetchAll(PDO::FETCH_CLASS, 'Category');
     return $categories;
 }
-
+// function to get category name
 function getCategoryName(int $id):string
 {
     global $pdo;

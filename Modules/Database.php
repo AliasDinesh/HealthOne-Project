@@ -11,13 +11,14 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_CLASS,
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
-
+// connect to database
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     include_once ('../Classes/Category.php');
     include_once ('../Classes/Product.php');
     include_once ('../Classes/Review.php');
     include_once ('../Classes/User.php');
+    include_once ('../Classes/OpeningTime.php');
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
