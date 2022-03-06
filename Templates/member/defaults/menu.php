@@ -13,7 +13,7 @@
                     <a class="nav-link" href="/member/categories">Sportapparaten</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="/member">Member</a>
+                    <a class="nav-link" href="/member/profile">Profiel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/member/contact">Contact</a>
