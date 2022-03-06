@@ -4,6 +4,9 @@ require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Review.php';
 require '../Modules/Login.php';
+require '../Modules/Register.php';
+require '../Modules/Profile.php';
+require '../Modules/OpeningTime.php';
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -99,18 +102,29 @@ switch ($params[1]) {
 
     case 'register':
         if (isset($_POST['register'])) {
-            if (isset($_POST['first_name']) && !empty($_POST['first_name']) && isset($_POST['last_name']) && !empty($_POST['last_name'])
-                && isset($_POST['email1']) && !empty($_POST['email1']) && isset($_POST['password1']) && !empty($_POST['password1'])) {
-                saveUser($_POST['email1'], $_POST['password1'], $_POST['first_name'], $_POST['last_name']);
-                $member = $_POST['first_name'];
-                include_once "../Templates/home.php";
-            } else {
-                $message = "Formulier is niet volledig ingevuld";
-                include_once "../Templates/register.php";
+            $result = makeRegistration();
+            switch ($result) {
+                case "SUCCESS":
+                    $member = $_POST['first_name'];
+                    include_once "../Templates/register.php";
+                    break;
+                case "INCOMPLETE":
+                    $message = "Formulier is niet volledig ingevuld";
+                    include_once "../Templates/register.php";
+                    break;
+                case 'EXIST':
+                    $message = "Gebruiker bestaat al";
+                    include_once "../Templates/register.php";
+                    break;
             }
         } else {
             include_once "../Templates/register.php";
         }
+        break;
+
+    case 'contact':
+        $times  = getOpeningTimes();
+        include_once "../Templates/contact.php";
         break;
 
     case 'admin':
@@ -126,9 +140,6 @@ switch ($params[1]) {
         header("Location: /home");
         break;
 
-    case 'contact':
-        include_once "../Templates/contact.php";
-        break;
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";
