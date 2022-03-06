@@ -6,6 +6,7 @@ global $titleSuffix;
 if (!isMember()) {
     logOut();
     header("Location:/home");
+    //include_once "../Templates/home.php";
 } else {
     switch ($params[2]) {
         case 'categories':
@@ -52,11 +53,10 @@ if (!isMember()) {
                     include_once "../Templates/member/product.php";
                 }
                 //submit form button
-                else if (isset($_POST['name']) && !empty($_POST['name'])
-                    && isset($_POST['review']) && !empty($_POST['review'])) {
-                    saveReview($_POST['name'], $_POST['review'], $_POST['stars']);
+                else if (isset($_POST['review']) && !empty($_POST['review'])) {
+                    saveReviewMember($_POST['review'], $_POST['stars']);
                     $reviews = getReviews($productId);
-                    $message = $_POST['name'];
+                    $message = $_SESSION['user']->first_name;
                     include_once "../Templates/member/product.php";
                 } else {
                     include_once "../Templates/member/review.php";
@@ -66,12 +66,64 @@ if (!isMember()) {
             }
             break;
 
+        case 'profile':
+            $titleSuffix = ' | Profile';
+            include_once "../Templates/member/profile.php";
+            break;
+
+        case 'editProfile':
+            $titleSuffix = ' | Profile';
+            if (isset($_POST['profile'])) {
+                $profile = changeProfile();
+                if ($profile === true) {
+                    header("Location: /member/profile");
+                    //include_once "../Templates/member/profile.php";
+                } else {
+                    $message = "Niet alle velden correct ingevuld";
+                    include_once "../Templates/member/editProfile.php";
+                }
+                break;
+            } else {
+                include_once "../Templates/member/editProfile.php";
+            }
+            break;
+
+        case 'changePassword':
+            $titleSuffix = ' | Password';
+            if (isset($_POST['password'])) {
+                $password = changePassword();
+                switch ($password) {
+                    case "SUCCES":
+                        header("Location: /member/profile");
+                        //include_once "../Templates/member/profile.php";
+                        break;
+                    case "FAILURE":
+                        $message = "Herhaal password is fout!";
+                        include_once "../Templates/member/changePassword.php";
+                        break;
+                    case "INCORRECT":
+                        $message = "Huidige password is fout";
+                        include_once "../Templates/member/changePassword.php";
+                        break;
+                    case "INCOMPLETE":
+                        $message = "Niet alle velden correct ingevuld";
+                        include_once "../Templates/member/changePassword.php";
+                        break;
+                }
+
+            } else {
+                include_once "../Templates/member/changePassword.php";
+            }
+            break;
+
         case 'contact':
+            $times = getOpeningTimes();
             include_once "../Templates/member/contact.php";
             break;
 
         case 'logout':
             header("Location:/home");
+            //include_once "../Templates/home.php";
             break;
 
 
