@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 10, 2022 at 12:11 PM
+-- Generation Time: Mar 06, 2022 at 10:07 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -97,7 +97,6 @@ INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VA
 (6, 'Matrix E50 Crosstrainer', 'img/categories/crosstrainer/crt6.jpeg', 'Ga voor een full body workout zonder je gewrichten te belasten met de Matrix E50 Elliptical Crosstrainer - XR. Deze crosstrainer is niet alleen mooi vormgegeven, maar is ook nog eens voorzien van de beste technische snufjes. Met de PerfectStride technologie combineert dit apparaat de ideale staplengte met een ergonomische en correcte plaatsing van je voet. ', 2),
 (7, 'WaterRower Oak', 'img/categories/roeitrainer/rt1.jpeg', 'Met de WaterRower Oak simuleer je een realistische roeitraining in je eigen woonkamer. Deze roeitrainer werkt met hydraulische weerstand, waardoor de weerstand zwaarder wordt naarmate je meer kracht zet. Dit maakt het ideaal voor intervaltraining. U kunt uw voeten stevig op de verstelbare voetsteunen zetten. En dankzij de ergonomisch gevormde zitting zit je de hele training comfortabel. Ook lange mensen kunnen zonder problemen gebruik maken van de roeitrainer, omdat de rails extra lang zijn. Na de training rolt u de WaterRower Oak eenvoudig weg met de transportwielen en klapt u de rugleuning op voor compacte opslag. Let op: u dient dit product bij ontvangst zelf in elkaar te zetten.', 1),
 (8, 'Tunturi FitRow 70 Water', 'img/categories/roeitrainer/rt2.png', 'Met de Tunturi FitRow 70 Water krijg je een uitdagende workout die realistisch aanvoelt dankzij de hydraulische weerstand. De natuurlijke weerstand belast uw gewrichten niet zo veel als magnetische weerstand. Bovendien wordt uw training veeleisender als u sneller roeit. De machine heeft 8 weerstandsniveaus om de weerstand goed te reguleren, zodat je stap voor stap je inspanningen kunt verhogen. Wil je niet zelf een training samenstellen, dan kun je gebruik maken van een van de 3 voorgeprogrammeerde trainingsprogramma\'s. In het overzichtelijke overzicht op het scherm zie je onder andere de afgelegde afstand, tijd en verbrande calorieën. De roeitrainer is deels inklapbaar en heeft transportwielen, zodat je hem na gebruik makkelijk ruimtebesparend opbergt.', 1),
-(9, 'Flow Fitness Como Water W', 'img/categories/roeitrainer/rt3.jpeg', 'Met de Flow Fitness Como Water W train je je hele lichaam met realistische roeitraining. Dankzij de hoge bouwkwaliteit kan het apparaat tot 6 uur per dag worden gebruikt, waardoor het geschikt is voor het hele gezin of voor duurtraining. Kies uit een van de 2 vooraf ingestelde trainingsprogramma\'s om jezelf uit te dagen, of start je eigen training. Doordat de roeitrainer werkt op waterweerstand voelt de training realistisch aan. De weerstand kan ook oneindig verhoogd worden, want hoe harder je roeit, hoe moeilijker het wordt. Je roeisnelheid, wattage, afgelegde afstand, calorieverbruik en hartslag zie je op het ingebouwde LCD-scherm. Na gebruik klap je de achterkant van de Como Water W op en rol je hem naar de hoek van de kamer om ruimte te besparen.', 1),
 (10, 'WaterRower Shadow', 'img/categories/roeitrainer/rt4.jpeg', 'Waan je op het water met de WaterRower Shadow. Dat komt omdat de roeitrainer werkt op hydraulische weerstand. Wanneer je begint te roeien, draait het water in de tank rond. Hoe sneller je gaat, hoe meer weerstand je voelt. Zo krijg je een realistische roeiervaring tijdens je training. Bovendien is de hydraulische weerstand nagenoeg geruisloos en worden uw gewrichten minder belast. Dit verkleint de kans op blessures. Op het display zie je je trainingsafstand, wattage, slagfrequentie en hartslag. Op zoek naar een grotere uitdaging? Sluit je laptop via de USB-kabel aan op de roeitrainer. Met de We Row-software kun je je trainingsresultaten bekijken en racen tegen je vrienden en familie.', 1),
 (11, 'WaterRower A1 Home', 'img/categories/roeitrainer/rt5.jpeg\r\n', 'Roeien alsof je op het water bent. Zo voelt het als je traint met de WaterRower A1 Home. Zodra je de hendels van deze essenhouten roeitrainer naar je toe trekt, begint het water in de bak te rollen. Dit zorgt niet alleen voor een ontspannen, zacht geluid. Doordat de A1 Home waterafstotend werkt, wordt er geen druk uitgeoefend op je gewrichten. De weerstand bepaal je aan de hand van de hoeveelheid kracht waarmee je roeit. In de tussentijd kunt u uw voortgang zien op de prestatiemonitor. Nog land in zicht?', 1),
 (12, 'Tunturi FitRow 40', 'img/categories/roeitrainer/rt6.png', 'De Tunturi FitRow 40 is een instapmodel roeitrainer waar ook de fanatieke roeier gebruik van kan maken. De machine heeft 8 weerstandsniveaus, waardoor je zelf bepaalt hoe zwaar je training is. De grote knoppen op het scherm zorgen ervoor dat de machine eenvoudig in te stellen is. Daarnaast laat het scherm je belangrijke trainingsgegevens zien, zoals de tijd, verbrande calorieën en het aantal slagen. Als je die gegevens niet wilt zien, kun je je tablet op de tablethouder leggen en een filmpje kijken. De banden op de voetsteunen zetten je voeten gemakkelijk vast. Als je klaar bent, klap je de roeitrainer in en rol je hem met behulp van de wieltjes gemakkelijk in een hoek van de kamer.', 1),
@@ -112,7 +111,8 @@ INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VA
 (21, 'Flow Fitness DTM400i Loopband', 'img/categories/loopband/lpb3.png', 'Direct aan de slag met je conditie en je calorieën. De Flow Fitness DTM 400i Loopband heb je in no time in elkaar en de simpele \"touch\" bediening is direct duidelijk. Deze sterke loopband heeft een stille 2.5 pk motor met een maximum snelheid van 14 km/u, welke instelbaar isin stappen van 0,2 km/u.\r\n', 4),
 (22, 'Finnlo Technum IV USB Loopband', 'img/categories/loopband/lpb4.jpeg', 'De Finnlo Technum IV USB Loopband komt uit de nieuwe generatie Finnlo Loopbanden. Het is een loopband die technische kwaliteit en een mooie vormgeving combineert om thuis stevig te sporten. ', 4),
 (23, 'Matrix TF50 Loopband - XR', 'img/categories/loopband/lpb5.jpeg', 'Ervaar een natuurlijke en professionele hardlooptraining in je eigen huis met de Matrix TF50 Loopband. Dit stevige frame met geavanceerde loopband is de beste van deze tijd en dat merk je direct. In combinatie met de Matrix XR Console heb je ook nog eens de mogelijkheid om gebruik te maken van verschillende programma\'s en ben je verbonden met je favoriete trainings apps.', 4),
-(24, 'Flow Fitness Runner DTM2000i Loopband', 'img/categories/loopband/lpb6.jpeg', 'De Flow Fitness Runner DTM2000i Loopband is een krachtige loopband die je van alle gemakken voorziet. Het is een sterk apparaat met vele technische snufjes. Een ideale keuze als je op zoek bent naar een loopband voor thuis.\r\n', 4);
+(24, 'Flow Fitness Runner DTM2000i Loopband', 'img/categories/loopband/lpb6.jpeg', 'De Flow Fitness Runner DTM2000i Loopband is een krachtige loopband die je van alle gemakken voorziet. Het is een sterk apparaat met vele technische snufjes. Een ideale keuze als je op zoek bent naar een loopband voor thuis.\r\n', 4),
+(49, 'Roeitrainer', 'img/categories/roeitrainer/9723260d43ced20402a02a11f4f6c5d6.jpeg', 'test', 1);
 
 -- --------------------------------------------------------
 
@@ -134,7 +134,10 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `name`, `date`, `description`, `stars`, `product_id`) VALUES
-(20, 'Dinesh', '2022-01-21', 'goede product', 3, 2);
+(22, 'Jacob', '2022-03-06', 'Goed', 2, 2),
+(23, 'Jacob', '2022-03-06', 'test', 5, 2),
+(24, 'Dinesh', '2022-03-06', 'Goede aparaat', 4, 11),
+(25, 'Bob', '2022-03-06', 'Goed', 3, 13);
 
 -- --------------------------------------------------------
 
@@ -157,7 +160,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `role`) VALUES
 (1, 'admin_dinesh@hotmail.com', 'adminDinesh', 'Dinesh', 'Alias', 'admin'),
-(2, 'test@gmail.com', 'test123', 'Dinesh', 'Alias', 'member');
+(3, 'member_dinesh@hotmail.com', 'memberBob', 'Bob', 'Test', 'member'),
+(13, 'teststudent@gmail.com', 'test123', 'Dinesh', 'Alias', 'member');
 
 --
 -- Indexes for dumped tables
@@ -215,19 +219,19 @@ ALTER TABLE `openingstijden`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
