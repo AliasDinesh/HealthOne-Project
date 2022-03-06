@@ -18,7 +18,7 @@ include_once('defaults/head.php');
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/member/home">Home</a></li>
             <li class="breadcrumb-item"><a href="/member/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/member/categories/<?= $product->category_id ?>"> <?= $name ?></a></li>
+            <li class="breadcrumb-item"><a href="/member/category/<?= $product->category_id ?>"> <?= $name ?></a></li>
         </ol>
     </nav>
     <div class="row gy-3 ">
