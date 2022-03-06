@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <img class="img-fluid center-block" width="200px" src='/img/<?= $product->picture ?>'>
+                <img class="img-fluid center-block" width="200px" src='/<?= $product->picture ?>'>
                 <div class="card-body">
                     <h5 class="card-title"><?= $product->name ?></h5>
                     <p class="card-text"><?= $product->description ?></p>
@@ -38,12 +38,6 @@
     <div class="row gy-3">
         <p class="lead">Geef je mening over dit sportapparaat</p>
         <form method="post">
-            <div class="mb-3">
-                <label for="name" class="col-form-label">
-                    Naam:
-                </label>
-                <input type="text" name="name" class="form-control" id="name">
-            </div>
             <div class="mb-3">
              <label for="name2" class="col-form-label">
                  Review:
