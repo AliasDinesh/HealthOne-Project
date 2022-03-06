@@ -32,7 +32,6 @@ include_once('defaults/head.php');
                     Bestand:
                 </label>
                 <input name="userfile" type="file">
-                <input type="submit" name="checkfile" value="Controleer bestand">
             </div>
             <div class="mb-3">
                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Category:</label>
