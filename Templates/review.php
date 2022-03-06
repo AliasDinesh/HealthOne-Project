@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <img class="img-fluid center-block" width="200px" src='/img/<?= $product->picture ?>'>
+                <img class="img-fluid center-block" width="200px" src='/<?= $product->picture ?>'>
                 <div class="card-body">
                     <h5 class="card-title"><?= $product->name ?></h5>
                     <p class="card-text"><?= $product->description ?></p>
