@@ -6,6 +6,7 @@ global $titleSuffix;
 if (!isAdmin()) {
     logOut();
     header("Location:/home");
+    //include_once "../Templates/home.php";
 } else {
     switch ($params[2]) {
         case 'products':
@@ -21,6 +22,7 @@ if (!isAdmin()) {
                 if ($result) {
                     saveProduct($_POST['name'], $_POST['description'], (int)$_POST['categories']);
                     header('Location: /admin/products');
+                    //include_once "../Templates/admin/products.php";
                 } else {
                     echo $message;
                     $categories = getCategories();
