@@ -38,7 +38,7 @@ include_once('defaults/head.php');
                 <div class="card-body">
                     <h2>Locatie</h2>
                     <h4>Zuid Hollandse weg 6a</h4> <br>
-                    <h2?Openingstijden</h2>
+                    <h2>Openingstijden</h2>
                     <table>
                         <?php foreach ($times as $time): ?>
                         <tr>
