@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 06, 2022 at 10:07 PM
+-- Generation Time: Mar 11, 2022 at 01:37 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -137,7 +137,11 @@ INSERT INTO `review` (`id`, `name`, `date`, `description`, `stars`, `product_id`
 (22, 'Jacob', '2022-03-06', 'Goed', 2, 2),
 (23, 'Jacob', '2022-03-06', 'test', 5, 2),
 (24, 'Dinesh', '2022-03-06', 'Goede aparaat', 4, 11),
-(25, 'Bob', '2022-03-06', 'Goed', 3, 13);
+(25, 'Bob', '2022-03-06', 'Goed', 3, 13),
+(26, 'Dinesh', '2022-03-06', 'goed', 2, 2),
+(32, 'robin', '2022-03-11', 'test', 3, 2),
+(33, 'Josh', '2022-03-11', 'Goed', 4, 2),
+(34, 'Jad', '2022-03-11', 'Goede apparaat', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -160,8 +164,11 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `role`) VALUES
 (1, 'admin_dinesh@hotmail.com', 'adminDinesh', 'Dinesh', 'Alias', 'admin'),
-(3, 'member_dinesh@hotmail.com', 'memberBob', 'Bob', 'Test', 'member'),
-(13, 'teststudent@gmail.com', 'test123', 'Dinesh', 'Alias', 'member');
+(3, 'member_dinesh@hotmail.com', 'memberJacob', 'Jad', 'Bib', 'member'),
+(13, 'teststudent@gmail.com', 'test123', 'Dinesh', 'Alias', 'member'),
+(14, 'testbob@gmail.com', 'bobtest', 'Bob', 'Test', 'member'),
+(15, 'robinBij@gmail.com', 'robinBij', 'Robin', 'Bij', 'member'),
+(16, 'JoshBek@gmail.com', '1234', 'Josh', 'Bek', 'member');
 
 --
 -- Indexes for dumped tables
@@ -219,19 +226,19 @@ ALTER TABLE `openingstijden`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
