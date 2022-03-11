@@ -16,19 +16,30 @@ if (!isAdmin()) {
             break;
 
         case 'add':
+            $target_file = "";
             if (isset($_POST['addProduct'])) {
-                $message = '';
                 $result = fileUpload();
-                if ($result) {
-                    saveProduct($_POST['name'], $_POST['description'], (int)$_POST['categories']);
-                    header('Location: /admin/products');
-                    //include_once "../Templates/admin/products.php";
-                } else {
-                    echo $message;
-                    $categories = getCategories();
-                    $titleSuffix = ' | Add';
-                    include_once '../Templates/admin/addProduct.php';
-                }
+                switch($result) {
+                    case "SUCCESS":
+                        $message = "Upload is gelukt";
+                        $products = getAllProducts();
+                        saveProduct($_POST['name'], $target_file, $_POST['description'], (int)$_POST['categories']);
+                        include_once "../Templates/admin/products.php";
+                        break;
+                    case "INCORRECT":
+                        $categories = getCategories();
+                        $message = "Sorry alleen gif, png of jpeg files zijn toegestaan";
+                        $titleSuffix = ' | Add';
+                        include_once '../Templates/admin/addProduct.php'; 
+                        break;
+                    case "FAILURE":
+                        $categories = getCategories();
+                        $message = "Sorry, upload is niet gelukt";
+                        $titleSuffix = ' | Add';
+                        include_once '../Templates/admin/addProduct.php'; 
+                        break;
+
+                } 
             } else {
                 $categories = getCategories();
                 $titleSuffix = ' | Add';
