@@ -38,20 +38,20 @@ function deleteProduct(int $product_id)
     }
 }
 // function to upload an image file
-function fileUpload()
+function fileUpload():string
 {
+    global $target_file;
+
     if (isset($_POST['checkfile'])) {
         print_r($_FILES);
     }
-
-    global $message;
 
     $allowed = ['gif', 'png', 'jpg', 'jpeg'];
     $fileName = $_FILES['userfile']['name'];
     $fileError = $_FILES['userfile']['error'];
     $ext = pathinfo($fileName, PATHINFO_EXTENSION);
     if (!in_array($ext, $allowed) || exif_imagetype($_FILES['userfile']['tmp_name']) === false) {
-        $message = "Sorry alleen gif, png of jpeg files zijn toegestaan";
+        return "INCORRECT";
     }
 
     $target_dir = 'img/categories/' . strtolower(getCategoryName((int)$_POST['categories'])) . '/';
@@ -60,18 +60,16 @@ function fileUpload()
 
     if ($fileError === 0) {
         move_uploaded_file($_FILES['userfile']['tmp_name'], $target_file);
-        var_dump($target_file);
-        $message.= "Upload is gelukt, bestandsnaam is " . $target_file;
-        return $target_file;
+        return "SUCCESS";
     } else {
-        $message.= "Sorry, upload is niet gelukt ". $target_file;
+        return "FAILURE";
     }
 }
 //function to save a product
-function saveProduct(string $name, string $description, int $category_id ):void
+function saveProduct(string $name, string $picture, string $description, int $category_id ):void
 {
     global $pdo;
-    $picture = fileUpload();
+
     $sth = $pdo->prepare("INSERT INTO product (name, picture, description, category_id) VALUES (?, ?, ?, ?)");
     $sth->bindParam(1, $name);
     $sth->bindParam(2, $picture);
