@@ -22,8 +22,8 @@ if (!isAdmin()) {
                 switch($result) {
                     case "SUCCESS":
                         $message = "Upload is gelukt";
-                        $products = getAllProducts();
                         saveProduct($_POST['name'], $target_file, $_POST['description'], (int)$_POST['categories']);
+                        $products = getAllProducts();
                         include_once "../Templates/admin/products.php";
                         break;
                     case "INCORRECT":
