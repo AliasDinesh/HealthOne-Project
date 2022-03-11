@@ -10,9 +10,13 @@ include_once('defaults/head.php');
     include_once ('defaults/menu.php');
     include_once ('defaults/pictures.php');
 
-    global $products;
+    global $products, $message;
     ?>
-
+    <?php if (!empty($message)): ?>
+        <div class="alert alert-success" role="alert">
+             <?=$message?>
+        </div>
+    <?php endif;?>
     <h4>Beheer sportapparaten</h4>
         <table class="table align-middle">
             <thead>
