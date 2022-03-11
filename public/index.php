@@ -51,7 +51,6 @@ switch ($params[1]) {
         if (isset($_GET['id'])) {
             $productId = $_GET['id'];
             $product = getProduct($productId);
-            $reviews = getReviews($productId);
             $name = getCategoryName($product->category_id);
             $titleSuffix = ' | Review' . $product->name;
             //close button
