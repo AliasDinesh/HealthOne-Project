@@ -10,8 +10,13 @@ include_once('defaults/head.php');
     include_once ('defaults/menu.php');
     include_once ('defaults/pictures.php');
 
-    global $categories;
+    global $categories, $message;
     ?>
+    <?php if (!empty($message)): ?>
+        <div class="alert alert-danger" role="alert">
+             <?=$message?>
+        </div>
+    <?php endif;?>
     <div class="row gy-3">
         <p class="lead">Een product toevoegen</p>
         <form  enctype="multipart/form-data" method="post">
